@@ -1,5 +1,5 @@
 import pytest
-from .prova.sudoku.sudoku import check
+from sudoku import check
 
 
 
