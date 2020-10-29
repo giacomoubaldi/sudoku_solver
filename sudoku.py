@@ -19,17 +19,31 @@ def check_raws(table):
         
     
 def check_columns(table):
-    column = []
+    
     for i in range(9):
+        column = []
         for j in range(9):
             column.append(table[i][j])
         
-        if(check(table[i]) == False):
+        if(check(column) == False):
             return False
     
     return True
 
 
+
+
+def check_squares(table):
+    val =[0,3,6]
+    for m in val:
+        square = []
+        for i in range(m,m+2):
+            for k in range (m,m+2):
+                square.append(table[i][k])
+        if (check(square)== False):
+            return False
+        
+    return True
 
 array= [
   [5, 3, 4, 6, 7, 8, 9, 1, 2],
