@@ -1,5 +1,5 @@
 import pytest
-from sudoku import check,check_raws,check_columns,check_squares
+from sudoku import check,check_raws,check_columns,check_squares,valid_solution
 
 # from hypothesis import given
 # import hypothesis.strategies as st
@@ -107,7 +107,7 @@ def test_check_squares():
 ]) == True
      
      
-def test_all_true():
+def test_valid_solution():
     table= [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -143,6 +143,6 @@ def test_all_true():
         [3, 4, 5, 2, 8, 6, 1, 7, 9]
   ]
 
-    assert (check_squares(table) and check_columns(table) and check_raws(table)) == True
-    assert (check_squares(table1) and check_columns(table1) and check_raws(table1)) == False
-    assert (check_squares(table2) and check_columns(table2) and check_raws(table2)) == False
+    assert valid_solution(table) == True
+    assert valid_solution(table1) ==  False
+    assert valid_solution(table2) ==  False
